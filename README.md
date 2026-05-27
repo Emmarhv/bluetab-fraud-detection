@@ -1,42 +1,35 @@
-# Fraud Detection Analytics & Predictive Modeling
+# Bluetab Fraud Detection (Machine Learning)
 
-*A real-world Data Science collaboration between Universidad Carlos III de Madrid (UC3M) students and Bluetab (an IBM Company).*
+A predictive Machine Learning model designed to detect fraudulent transactions in highly imbalanced financial datasets.
 
-**Project Team:** Enica King, Andrea López, César Rodríguez, Emma Rodríguez, and Silvia Díez.
-**Supervisors & Mentors:** Prof. Fco. Javier Nogales (UC3M), María Angeles Quesada, Juan Francisco Huete, and Cruz Mateo (Bluetab).
+## 🎯 Objective
+The objective of this project was to tackle a classic, real-world data science problem: fraud detection. Since fraudulent transactions represent a tiny fraction of total transactions, the primary challenge was to correctly identify fraud without overwhelming the system with false positives, requiring advanced data sampling and classification techniques.
 
-## Objective
-Develop a comprehensive analysis of financial transaction patterns using advanced Machine Learning (ML) techniques to classify fraud probability with high precision. The ultimate goal is to improve the detection of illicit activities, minimize economic losses, and strengthen trust in financial operations, thereby contributing to the resilience of the banking and insurance sectors.
+## 🚀 What is Achieved
+- **Handling Imbalanced Data:** Successfully implemented SMOTE (Synthetic Minority Over-sampling Technique) to synthetically balance the dataset, preventing the model from simply predicting the majority class (non-fraud) every time.
+- **Algorithm Evaluation:** Trained and evaluated multiple classification algorithms, including Logistic Regression, Random Forests, and Gradient Boosting (XGBoost/LightGBM).
+- **Feature Engineering:** Analyzed feature importance and performed dimensionality reduction to optimize model training speed and accuracy.
+- **Business Metrics:** Focused on optimizing the F1-Score and Recall rather than pure Accuracy, ensuring that actual fraud cases were caught effectively, which is critical for financial institutions.
 
-## Tech Stack & Tools
-- **Data Manipulation:** Python, Pandas, NumPy
-- **Machine Learning:** Scikit-Learn (Ensemble methods, classification trees)
-- **Imbalanced Data Techniques:** SMOTE, Class Weights tuning
-- **Visualization & Dashboarding:** Plotly, Dash/Streamlit
+## 🛠️ Tools & Technologies
+- **Language:** Python
+- **Libraries:** `scikit-learn`, `pandas`, `numpy`, `imbalanced-learn` (SMOTE).
+- **Visualization:** `matplotlib`, `seaborn`
+- **Environment:** Jupyter Notebook
 
-## Project Stages & Methodology
+## 📖 Usage Guide
 
-### 1. Data Collection and Exploratory Data Analysis (EDA)
-- **Data Modeling:** Structuring a massive financial transaction dataset for analytical processing.
-- **EDA:** Identifying statistical anomalies, correlation between features, and visualizing outlier distributions that hint at fraudulent behavior.
-
-### 2. Modeling and Simulation
-- **Feature Engineering:** Cleaning raw transaction data and creating highly predictive behavioral features.
-- **Class Imbalance Management:** Addressing the severe imbalance inherent in fraud datasets using advanced sampling techniques (like SMOTE) to prevent model bias toward the majority class.
-- **Classification Models:** Developing, cross-validating, and tuning predictive algorithms to maximize recall for fraudulent transactions without excessively increasing false positives.
-
-### 3. Visualization and Dashboarding
-- **Interactive Dashboards:** Building visual panels to track fraud metrics in real-time.
-- **Model Evaluation:** Visualizing performance metrics including Precision, Recall, F1-Score, and ROC-AUC curves.
-
-### 4. Strategies and Business Impact
-- **Risk Management:** Designing actionable strategies for fraud prevention based on model probability outputs.
-- **ROI Estimation:** Calculating the potential financial impact and Return on Investment (ROI) of deploying the model in a real banking environment.
-
-## How to Run
-
-Clone the repository and install all required packages:
+### Prerequisites
+You will need Python 3 and the standard data science stack.
 
 ```bash
-pip install -r requirements.txt
+pip install pandas numpy scikit-learn imbalanced-learn matplotlib seaborn jupyter
 ```
+
+### Exploring the Project
+1. Clone the repository.
+2. Launch Jupyter Notebook:
+   ```bash
+   jupyter notebook
+   ```
+3. Open the main analysis notebook to view the step-by-step pipeline: Exploratory Data Analysis (EDA), SMOTE application, model training, and the final confusion matrices.

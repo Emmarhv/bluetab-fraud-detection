@@ -1,0 +1,512 @@
+/* ============================================
+   PROFESSIONAL FINANCIAL DASHBOARD STYLES
+   ============================================ */
+
+/* ---------- Global Reset & Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a !important;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Navigation Bar ---------- */
+.navbar {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%) !important;
+  border-bottom: 1px solid #2a2a2a !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 1rem 2rem !important;
+}
+
+.navbar-brand {
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-link {
+  color: #cccccc !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  margin: 0 0.25rem;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #00d4ff !important;
+  background: rgba(0, 212, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Active page styling */
+.nav-link-active {
+  color: #00d4ff !important;
+  background: rgba(0, 212, 255, 0.15) !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #00d4ff;
+}
+
+.nav-link-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #00d4ff 0%, #0099cc 100%);
+  border-radius: 3px 0 0 3px;
+}
+
+/* ---------- Cards & Panels ---------- */
+.card {
+  background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%) !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  overflow: visible;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.15);
+  border-color: #3a3a3a !important;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #1a1a1a 0%, #1f1f1f 100%) !important;
+  border-bottom: 1px solid #2a2a2a !important;
+  padding: 1rem 1.5rem !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.3px;
+}
+
+.card-body {
+  padding: 1.5rem !important;
+}
+
+/* ---------- KPI Cards ---------- */
+.kpi-card {
+  background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00d4ff 0%, #0099cc 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.kpi-card:hover::before {
+  opacity: 1;
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
+  border-color: #3a3a3a;
+}
+
+.kpi-value {
+  white-space: nowrap;
+  overflow: visible;
+  word-break: keep-all;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.kpi-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888888;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Dropdowns (react-select) ---------- */
+.Select-control {
+  background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%) !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  transition: all 0.2s ease;
+  min-height: 42px !important;
+  height: auto !important;
+}
+
+.Select-control:hover {
+  border-color: #3a3a3a !important;
+}
+
+.Select-control:focus,
+.Select-control--is-focused {
+  border-color: #00d4ff !important;
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1) !important;
+}
+
+.Select-value-label,
+.Select-placeholder,
+.Select-input {
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  padding: 0.5rem 0 !important;
+}
+
+.Select-input > input {
+  color: #fff !important;
+  font-size: 0.9rem !important;
+}
+
+.Select-menu-outer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #1f1f1f 100%) !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  max-height: 300px !important;
+  z-index: 10000 !important;
+  position: absolute !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Ensure dropdown container has high z-index */
+.Select {
+  z-index: 10000 !important;
+  position: relative !important;
+}
+
+.Select.is-open {
+  z-index: 10000 !important;
+}
+
+.VirtualizedSelectOption {
+  background-color: transparent !important;
+  color: #fff !important;
+  padding: 0.875rem 1.25rem !important;
+  transition: all 0.2s ease;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  min-height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.VirtualizedSelectOption:hover {
+  background: rgba(0, 212, 255, 0.15) !important;
+  color: #00d4ff !important;
+  font-weight: 500;
+}
+
+.VirtualizedSelectFocusedOption {
+  background: rgba(0, 212, 255, 0.2) !important;
+  color: #00d4ff !important;
+  font-weight: 500;
+}
+
+/* Select single value container */
+.Select-single-value {
+  color: #fff !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  padding: 0.5rem 0 !important;
+}
+
+/* Select arrow */
+.Select-arrow {
+  border-color: #888 transparent transparent !important;
+}
+
+.Select-control:hover .Select-arrow {
+  border-color: #00d4ff transparent transparent !important;
+}
+
+/* ---------- Form Controls ---------- */
+.form-control {
+  background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%) !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  padding: 0.625rem 1rem !important;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus {
+  background: linear-gradient(135deg, #1a1a1a 0%, #1f1f1f 100%) !important;
+  color: #fff !important;
+  border-color: #00d4ff !important;
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1) !important;
+  outline: none !important;
+}
+
+.form-control::placeholder {
+  color: #666666;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  padding: 0.625rem 1.5rem !important;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 212, 255, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%) !important;
+  border: 1px solid #3a3a3a !important;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-muted {
+  color: #888888 !important;
+}
+
+/* ---------- Tables ---------- */
+.table-dark {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+.table-dark thead th {
+  background: linear-gradient(135deg, #1a1a1a 0%, #1f1f1f 100%) !important;
+  border-bottom: 2px solid #2a2a2a !important;
+  color: #00d4ff !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  padding: 1rem !important;
+}
+
+.table-dark tbody tr {
+  border-bottom: 1px solid #2a2a2a !important;
+  transition: all 0.2s ease;
+}
+
+.table-dark tbody tr:hover {
+  background: rgba(0, 212, 255, 0.05) !important;
+  transform: scale(1.01);
+}
+
+.table-dark tbody td {
+  padding: 1rem !important;
+  color: #cccccc;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* ---------- Container Padding ---------- */
+.container-fluid {
+  padding: 2rem !important;
+}
+
+/* ---------- Section Headers ---------- */
+.section-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #2a2a2a;
+}
+
+/* ---------- Status Badges ---------- */
+.badge {
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.badge-success {
+  background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+  color: #000;
+}
+
+.badge-danger {
+  background: linear-gradient(135deg, #ff0055 0%, #cc0033 100%);
+  color: #fff;
+}
+
+.badge-warning {
+  background: linear-gradient(135deg, #ffaa00 0%, #cc8800 100%);
+  color: #000;
+}
+
+.badge-info {
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  color: #000;
+}
+
+/* ---------- Loading States ---------- */
+.loading-spinner {
+  border: 3px solid #2a2a2a;
+  border-top: 3px solid #00d4ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ---------- Dash Dropdown Styling ---------- */
+.model-selector-dropdown,
+.model-selector-dropdown .Select-control,
+.model-selector-dropdown .Select-input,
+.model-selector-dropdown .Select-value,
+.model-selector-dropdown .Select-placeholder {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
+  border-radius: 8px !important;
+  min-height: 45px !important;
+}
+
+.model-selector-dropdown .Select-menu-outer {
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  z-index: 9999 !important;
+}
+
+.model-selector-dropdown .Select-option {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  padding: 12px 16px !important;
+}
+
+.model-selector-dropdown .Select-option:hover,
+.model-selector-dropdown .Select-option.is-focused {
+  background-color: rgba(0, 212, 255, 0.15) !important;
+  color: #00d4ff !important;
+}
+
+.model-selector-dropdown .Select-option.is-selected {
+  background-color: rgba(0, 212, 255, 0.25) !important;
+  color: #00d4ff !important;
+  font-weight: 600 !important;
+}
+
+/* Dash Dropdown (dcc.Dropdown) global styling */
+.Select--single > .Select-control .Select-value,
+.Select-placeholder {
+  color: #ffffff !important;
+  line-height: 45px !important;
+  padding-left: 12px !important;
+}
+
+.Select-arrow-zone {
+  padding-right: 12px !important;
+}
+
+.Select-arrow {
+  border-color: #888 transparent transparent !important;
+}
+
+.Select-control:hover .Select-arrow,
+.Select.is-focused .Select-arrow {
+  border-color: #00d4ff transparent transparent !important;
+}
+
+/* Ensure dropdown doesn't get cut off */
+.Select.is-open {
+  z-index: 9999 !important;
+  position: relative !important;
+}
+
+.Select-menu-outer {
+  z-index: 9999 !important;
+  position: absolute !important;
+}
+
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 768px) {
+  .kpi-value {
+    font-size: 1.75rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .container-fluid {
+    padding: 1rem !important;
+  }
+}
